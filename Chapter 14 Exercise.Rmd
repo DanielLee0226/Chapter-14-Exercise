@@ -1,0 +1,47 @@
+---
+title: "Chapter 14 Exercise"
+output: html_notebook
+Name: Daniel Lee
+---
+
+Setup
+```{r}
+library(mosaic)
+library(DataComputing)
+library(tidyverse)
+```
+
+
+### Problem 14.1
+```{r}
+mosaicData::CPS85 %>%
+  ggplot(aes(x = sex, y = wage)) +
+  geom_boxplot(aes(fill=sex))
+```
+
+
+### Problem 14.2
+- Approximately 1.63 meters
+
+### Problem 14.3
+
+
+### Problem 14.4
+
+### Problem 14.5
+
+### Problem 14.6
+
+### Problem 14.7
+
+### Problem 14.8
+
+### Problem 14.9
+
+### Problem 14.10
+
+### Problem 14.11
+
+### Problem 14.12
+
+### Problem 14.13
