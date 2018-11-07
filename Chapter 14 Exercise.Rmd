@@ -24,23 +24,73 @@ mosaicData::CPS85 %>%
 - Approximately 1.63 meters
 
 ### Problem 14.3
-
+Women = less than 1.6 meters
+Men = Around 1.75 meters
 
 ### Problem 14.4
+40 years old = around 27 bmi 
+70 years old = around 28 bmi
 
 ### Problem 14.5
+Graph A
+```{r}
+CPS85 %>%
+  ggplot(aes(x=wage)) +
+  geom_density(aes(fill=sex, color=sex), alpha=0.5) +
+  facet_grid(.~married) +
+  ggtitle("(A)") + xlim(0,30)
+```
+
+Graph B
+```{r}
+CPS85 %>%
+  ggplot(aes(x=age, y=wage)) +
+  geom_smooth(aes(color=sex)) +
+  ggtitle("(B)") +
+  facet_grid(married ~.) + ylim(0,NA)
+```
+
+Graph C
+```{r}
+CPS85 %>%
+  ggplot(aes(x=age, y=wage)) +
+  ggtitle("(C)") +
+  geom_smooth(aes(color=sex)) +
+  facet_wrap(~ sector) + ylim(0,25)
+```
 
 ### Problem 14.6
+```{r}
+mosaicData::CPS85 %>%
+  ggplot(aes(x = sector, y =wage, color = sex)) +
+  geom_boxplot() +
+  ylim(0,25)
+```
 
 ### Problem 14.7
+```{r}
+mosaicData::CPS85 %>%
+  ggplot(aes(x = educ, y =wage, color = sex)) +
+  geom_point() +
+  stat_smooth(method="lm") +
+  ylim(0,15)
+```
 
 ### Problem 14.8
+```{r}
+mosaicData::Galton %>%
+  ggplot(aes(x = height, y = mother)) +
+  geom_density2d() +
+  facet_grid(~ sex)
+```
+
 
 ### Problem 14.9
 
 ### Problem 14.10
 
 ### Problem 14.11
+
 
 ### Problem 14.12
 
