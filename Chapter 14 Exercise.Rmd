@@ -85,9 +85,9 @@ mosaicData::Galton %>%
 ```
 
 ### Problem 14.9
-a) 
-b)
-c)
+a) It is not fully consistent with the data
+b) 1:4
+c) Yes
 
 ### Problem 14.10
 ```{r}
@@ -98,9 +98,16 @@ mosaicData::Galton %>%
 ```
 
 ### Problem 14.11
+a) As the incomeGroup increases, the range of percentage of fraction 65 and older decreases with a outlier when the incomeGroup is around 58000. 
 
+b) Yes, it follows the 1/square root n rule. 
 
 ### Problem 14.12
+```{r}
+MedicareCharges %>%
+  ggplot(aes(x = drg)) +
+  geom_density()
+```
 
 
 ### Problem 14.13
