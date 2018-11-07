@@ -84,14 +84,38 @@ mosaicData::Galton %>%
   facet_grid(~ sex)
 ```
 
-
 ### Problem 14.9
+a) 
+b)
+c)
 
 ### Problem 14.10
+```{r}
+mosaicData::Galton %>%
+  ggplot(aes(x=height)) +
+  geom_density(aes(fill=sex, color=sex), alpha=0.5) +
+  xlim(55,80)
+```
 
 ### Problem 14.11
 
 
 ### Problem 14.12
 
+
 ### Problem 14.13
+```{r}
+Heights <-
+  NCHS %>%
+  filter(age > 20, ! is.na(smoker)) %>%
+  group_by(sex, smoker, age) %>%
+  summarise(height = mean(height, na.rm=TRUE))
+
+Heights %>%
+  ggplot(aes(x = age, y = height)) +
+  geom_line(aes(linetype = smoker)) +
+  facet_wrap(~ sex) +
+  stat_smooth(method = lm)
+```
+For female, the smokers and non-smokers differ differently at the age of around 35 years old.
+For male, the smokers and non-smokers differ differenrlty at the age of around 60 years old.
